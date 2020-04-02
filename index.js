@@ -1,14 +1,40 @@
-
-var url = require('url');
-var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
-var q = url.parse(adr, true);
-
-console.log(q.host); //returns 'localhost:8080'
-console.log(q.pathname); //returns '/default.htm'
-console.log(q.search); //returns '?year=2017&month=february'
-
-var qdata = q.query; //returns an object: { year: 2017, month: 'february' }
-console.log(qdata.month); //returns 'february'
+var https = require('https');
+ 
+/**
+ * HOW TO Make an HTTP Call - GET
+ */
+// options for GET
+var optionsget = {
+    host : 'kauth.kakao.com', // here only the domain name
+    // (no http/https !)
+    port : 443,
+    path : '/oauth/token?grant_type=authorization_code&client_id=b4bae52f31781e2c403c049bc2007903&redirect_uri=http://google.com/oauth/kakao&code=eRNiVPtg9IAOLu7Z64eCJxtZPYWk6rjfwXDCsHkJDHMVuOZpNLwE5NhS3OAD_9qcbYxwVgopcFAAAAFxOm8WOQ', // the rest of the url with parameters if needed
+    method : 'GET' // do GET
+};
+ 
+console.info('Options prepared:');
+console.info(optionsget);
+console.info('Do the GET call');
+ 
+// do the GET request
+var reqGet = https.request(optionsget, function(res) {
+    console.log("statusCode: ", res.statusCode);
+    // uncomment it for header details
+//  console.log("headers: ", res.headers);
+ 
+ 
+    res.on('data', function(d) {
+        console.info('GET result:\n');
+        process.stdout.write(d);
+        console.info('\n\nCall completed');
+    });
+ 
+});
+ 
+reqGet.end();
+reqGet.on('error', function(e) {
+    console.error(e);
+});
 
 /*
 var express = require('express')
