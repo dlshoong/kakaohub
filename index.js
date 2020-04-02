@@ -11,7 +11,7 @@ app.get('/', function(request, response) {
 
 app.get('/users', function(req, res) {
   request('https://jsonplaceholder.typicode.com/users', function(error, response, body) {
-      res.json(body)
+    console.log(res.json(body));
   });
 });
 
