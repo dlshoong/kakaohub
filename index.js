@@ -7,13 +7,11 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
   response.send('Hello World!')
-})
 
-app.get('/users', function(req, res) {
   request('https://jsonplaceholder.typicode.com/users', function(error, response, body) {
     console.log(res.json(body));
   });
-});
+})
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
