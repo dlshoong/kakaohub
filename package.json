@@ -1,29 +1,14 @@
 {
-  "name": "node-js-sample",
-  "version": "0.2.0",
-  "description": "A sample Node.js app using Express 4",
+  "name": "skill-server-example",
+  "version": "0.0.1",
+  "description": "skill server example",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.13.3"
-  },
-  "engines": {
-    "node": "4.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "author": "Seng Hoong Lim",
-  "contributors": [
-    "Seng Hoong Lim"
-  ],
-  "license": "Seng Hoong Lim 2020"
+    "express": "^4.16.4"
+  }
 }
