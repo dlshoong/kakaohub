@@ -50,6 +50,6 @@ apiRouter.post('/showHello', function(req, res) {
   res.status(200).send(responseBody);
 });
 
-app.listen(3000, function() {
+app.listen(80, function() {
   console.log('Example skill server listening on port 3000!');
 });
